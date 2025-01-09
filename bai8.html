@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<button onclick="sinhala()">Chơi</button>
+<script>
+  function sinhala() {
+    let x = prompt('Số bạn muốn đoán trong khoảng lớn nhất là bao nhiêu?');
+    x = parseInt(x);
+    if (isNaN(x) || x <= 0) {
+      alert('Vui lòng nhập một số hợp lệ lớn hơn 0');
+      return;
+    }
+
+    let y = Math.floor(Math.random() * x);
+    let z;
+    let correct = false;
+
+    for (let i = 0; i < 5; i++) {
+      z = prompt('Nhập số bạn đoán');
+      z = parseInt(z);
+
+      if (isNaN(z)) {
+        alert('Vui lòng nhập một số hợp lệ');
+        continue;
+      }
+
+      if (z < y) {
+        alert('Số của bạn lớn hơn');
+      } else if (z > y) {
+        alert('Số của bạn nhỏ hơn');
+      } else if (z === y) {
+        alert('Bạn đoán chính xác');
+        correct = true;
+        break; 
+      }
+    }
+
+    if (!correct) {
+      alert('Bạn đã hết lượt. Số đúng là: ' + y);
+    }
+  }
+</script>
+</body>
+</html>
