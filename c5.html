@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" placeholder="so tien vay" id='tien'>
+<input type="number" placeholder="thoi gian vay(thang)" id='thang'>
+<input type="number" placeholder="lai suat(%)" id='lai'>
+<button onclick="lai()">tien lai phai tracho ngan hang:</button>
+<div id="l"> so tien lai la:</div>
+<script>
+    function lai() {
+        let tien = parseInt(document.getElementById('tien').value);
+        let thang = parseInt(document.getElementById('thang').value);
+        let lai = parseInt(document.getElementById('lai').value);
+        tiengoc = tien / thang;
+        let du = 0;
+        let m = 0;
+        for (let i = 1; i <= thang; i++) {
+            let tienlai = (tien - du) * (lai / 100) / thang;
+            du += tiengoc;
+            m += tienlai;
+        }
+        document.getElementById('l').innerHTML = 'lai phai tra cho ngan hang:' + m;
+    }
+</script>
+</body>
+</html>

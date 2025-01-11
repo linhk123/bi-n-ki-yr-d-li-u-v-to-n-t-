@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    for (let i = 0; i < 5; i++) {
+        let str = '';
+        for (let j = 0; j <= i; j++) {
+            str += '*';
+        }
+        document.write(str + '<br>');
+
+    }
+    document.write('<br> <br><br><br>');
+
+    for (let i = 5; i >= 1; i--) {
+        let str = '';
+        for (let j = 1; j <= i; j++) {
+            str += '*';
+        }
+        document.write(str + '<br>');
+    }
+    document.write('<br> <br><br><br>');
+
+    for (let i = 0; i < 5; i++) {
+        let str = '';
+        for (let j = 0; j <= 5 - i -1; j++) {
+            str += '&nbsp&nbsp';
+        }
+        for (let k = 0; k <= i; k++) {
+            str += '*';
+        }
+        document.write(str + '<br>');
+    }
+    document.write('<br> <br><br><br>');
+    for (let i = 0; i < 5; i++) {
+        let str = '';
+        for (let j = 0; j < i; j++) {  // Thêm khoảng trắng tăng dần
+            str += '&nbsp&nbsp';
+        }
+        for (let k = 0; k < 5 - i; k++) {  // Số lượng dấu * giảm dần
+            str += '*';
+        }
+        document.write(str + '<br>');
+    }
+
+</script>
+</body>
+</html>
